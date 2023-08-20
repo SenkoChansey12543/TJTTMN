@@ -1,0 +1,26 @@
+﻿using Terraria;
+using Terraria.ModLoader;
+using Terraria.ID;
+
+namespace TJTTMN.Common.Systems.GlobalNPCs
+{
+    public class GlobalNpcWeedtiteWeakness : GlobalNPC
+    {
+        bool InstancePerEntity => true;
+        public static bool HasNaturesShowerWeaknessDebuff;
+        public override void ResetEffects(NPC npc)
+        {
+            HasNaturesShowerWeaknessDebuff = false;
+        }
+
+        public override void ModifyHitByProjectile(NPC npc, Projectile projectile, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+        {
+            if (HasNaturesShowerWeaknessDebuff == true)
+            {
+                npc.defense = npc.defDefense - 6;
+            }
+        }
+
+    }
+
+}
