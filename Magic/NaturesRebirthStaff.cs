@@ -1,0 +1,70 @@
+﻿using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+using Terraria.GameContent.Creative;
+using TJTTMN.Content.Projectiles;
+using Microsoft.Xna.Framework;
+using Terraria.DataStructures;
+using TJTTMN.Content.Items.Materials;
+using TJTTMN.Content.Tiles;
+
+namespace TJTTMN.Content.Items.Weapons.Magic
+{
+    public class NaturesRebirthStaff : ModItem
+    {
+        public override void SetStaticDefaults()
+        {
+            // Tooltip.SetDefault("");
+            // DisplayName.SetDefault("Nature's rebirth staff");
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
+            Item.staff[Item.type] = true;
+        }
+        public override void SetDefaults()
+        {
+            Item.width = 1;
+            Item.height = 1;
+            Item.DamageType = DamageClass.Magic;
+            Item.damage = 21;
+            Item.useStyle = 5;
+            Item.useTime = 21;
+            Item.useAnimation = 21;
+            Item.useTurn = true;
+            Item.autoReuse = true;
+            Item.mana = 8;
+            Item.noMelee = true;
+            Item.shootSpeed = 11;
+            Item.UseSound = SoundID.Item43;
+            Item.rare = ItemRarityID.Green;
+            Item.knockBack = 3f;
+            Item.value = Item.sellPrice(gold: 1, silver: 42);
+            Item.shoot = ModContent.ProjectileType<NatureRainProjectile>();
+        }
+        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        {
+            Vector2 newVelocity = velocity.RotatedBy(MathHelper.ToRadians(7));
+            Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
+            Vector2 new1Velocity = velocity.RotatedBy(MathHelper.ToRadians(0));
+            Projectile.NewProjectileDirect(source, position, new1Velocity, type, damage, knockback, player.whoAmI);
+            Vector2 new2Velocity = velocity.RotatedBy(MathHelper.ToRadians(-7));
+            Projectile.NewProjectileDirect(source, position, new2Velocity, type, damage, knockback, player.whoAmI);
+            return false;
+        }
+        public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
+        {
+            Vector2 muzzleOffset = Vector2.Normalize(velocity) * 25f;
+            if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
+            {
+                position += muzzleOffset;
+            }
+        }
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient<Plantite>(12)
+                .AddIngredient(ItemID.FallenStar, 5)
+                .AddIngredient<VineGel>(6)
+                .AddTile<HerbalAnvilTile>()
+                .Register();
+        }
+    }
+}

@@ -1,0 +1,66 @@
+﻿using Terraria;
+using Terraria.ModLoader;
+using Terraria.ID;
+using Terraria.GameContent.Creative;
+using TJTTMN.Content.Projectiles;
+using TJTTMN.Common.Systems.GlobalItems;
+using Microsoft.Xna.Framework;
+using System.Numerics;
+using TJTTMN.Content.Items.Materials;
+using TJTTMN.Content.Tiles;
+
+namespace TJTTMN.Content.Items.Weapons.Ranger
+{
+    public class MushroomCannon : ModItem
+    {
+        public override void SetStaticDefaults()
+        {
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
+        }
+        public override void SetDefaults()
+        {
+            Item.damage = 30;
+            Item.width = 32;
+            Item.height = 32;
+            Item.noMelee = true;
+            Item.useAmmo = ItemID.Mushroom;
+            Item.shootSpeed = 10;
+            Item.knockBack = 2.5f;
+            Item.rare = ItemRarityID.Green;
+            Item.useTime = 22;
+            Item.useAnimation = 22;
+            Item.autoReuse = false;
+            Item.value = Item.sellPrice(gold: 2, silver: 12);
+            Item.UseSound = SoundID.Item11;
+            Item.DamageType = DamageClass.Ranged;
+            Item.useStyle = ItemUseStyleID.Shoot;
+            Item.shoot = ModContent.ProjectileType<GlowingMushroomProjectile>();
+        }
+        public override Microsoft.Xna.Framework.Vector2? HoldoutOffset()
+        {
+            return new Microsoft.Xna.Framework.Vector2(-8, 0);
+        }
+        public override bool CanConsumeAmmo(Item ammo, Player player)
+        {
+            return Main.rand.NextFloat() >= .12f;
+        }
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient(ItemID.Mushroom, 10)
+                .AddIngredient(ItemID.GlowingMushroom, 5)
+                .AddIngredient(ItemID.VileMushroom, 3)
+                .AddIngredient<Weedtite>(8)
+                .AddTile<HerbalAnvilTile>()
+                .Register();
+
+            CreateRecipe()
+                .AddIngredient(ItemID.Mushroom, 10)
+                .AddIngredient(ItemID.GlowingMushroom, 5)
+                .AddIngredient(ItemID.ViciousMushroom, 3)
+                .AddIngredient<Weedtite>(8)
+                .AddTile<HerbalAnvilTile>()
+                .Register();
+        }
+    }
+}
