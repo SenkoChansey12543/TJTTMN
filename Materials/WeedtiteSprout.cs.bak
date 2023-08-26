@@ -1,0 +1,26 @@
+﻿using Terraria;
+using Terraria.ModLoader;
+using Terraria.GameContent.Creative;
+using Terraria.ID;
+
+namespace TJTTMN.Content.Items.Materials
+{
+    public class WeedtiteSprout : ModItem
+    {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Weedtite sprout");
+            Tooltip.SetDefault("It can growth into the mystical plant"
+                + "\nknown by the name of Weedtite");
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 50;
+        }
+        public override void SetDefaults()
+        {
+            Item.width = 10;
+            Item.height = 10;
+            Item.rare = ItemRarityID.White;
+            Item.value = Item.sellPrice(copper : 70);
+            Item.maxStack = 9999;
+        }
+    }
+}

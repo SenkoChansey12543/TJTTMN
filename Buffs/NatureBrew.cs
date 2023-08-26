@@ -1,0 +1,14 @@
+﻿using Terraria;
+using Terraria.ModLoader;
+
+namespace TJTTMN.Content.Buffs
+{
+    public class NatureBrew : ModBuff       
+    {
+        public override void Update(Player player, ref int buffIndex)
+        {
+            player.lifeRegen += 1;
+            player.statLifeMax2 += 20;
+        }
+    }
+}

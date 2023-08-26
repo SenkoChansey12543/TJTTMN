@@ -1,0 +1,46 @@
+﻿using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+using Terraria.GameContent.Creative;
+using TJTTMN.Content.Items.Materials;
+
+namespace TJTTMN.Content.Items.Ores
+{
+    public class ArmoplantiteOre : ModItem
+    {
+        public override void SetStaticDefaults()
+        {
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
+            ItemID.Sets.ExtractinatorMode[Item.type] = Item.type;
+        }
+        public override void SetDefaults()
+        {
+            Item.useStyle = ItemUseStyleID.Swing;
+            Item.useTurn = true;
+            Item.useAnimation = 15;
+            Item.useTime = 10;
+            Item.autoReuse = true;
+            Item.maxStack = 9999;
+            Item.consumable = true;
+            Item.createTile = ModContent.TileType<Tiles.ArmoplantiteTile>();
+            Item.width = 12;
+            Item.height = 12;
+            Item.value = Item.buyPrice(silver: 2, copper: 23);
+            Item.rare = ItemRarityID.Green;
+        }
+        public override void ExtractinatorUse(int extractinatorBlockType, ref int resultType, ref int resultStack)
+        {
+            int x = Main.rand.Next(2);
+            if (x == 0)
+            {
+                resultType = ModContent.ItemType<ArmotiteChunk>();
+                resultStack = 1;        
+            }
+            if (x == 1)
+            {
+                resultType = ModContent.ItemType<PlantiteSprout>();
+                resultStack = 1;
+            }
+        }
+    }
+}

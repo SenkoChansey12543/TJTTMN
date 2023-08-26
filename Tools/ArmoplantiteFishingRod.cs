@@ -1,0 +1,49 @@
+﻿using Microsoft.Xna.Framework;
+using Terraria.DataStructures;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+using Terraria.GameContent.Creative;
+using TJTTMN.Content.Projectiles;
+using TJTTMN.Content.Items.Materials;
+using TJTTMN.Content.Tiles;
+
+namespace TJTTMN.Content.Items.Tools
+{
+    public class ArmoplantiteFishingRod : ModItem
+    {
+        public override void SetStaticDefaults()
+        {
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
+        }
+        public override void SetDefaults()
+        {
+            Item.CloneDefaults(ItemID.WoodFishingPole);
+            Item.fishingPole = 25;
+            Item.shootSpeed = 14f;
+            Item.shoot = ModContent.ProjectileType<ArmoplantiteBobber>();
+            Item.rare = ItemRarityID.Green;
+            Item.value = Item.buyPrice(silver: 87, copper: 32);
+        }
+        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        {
+            int bobberAmount = 2;
+            float spreadAmount = 50f;
+            for (int index = 0; index < bobberAmount; ++index)
+            {
+                Vector2 bobberSpeed = velocity + new Vector2(Main.rand.NextFloat(-spreadAmount, spreadAmount) * 0.05f, Main.rand.NextFloat(-spreadAmount, spreadAmount) * 0.05f);
+                Projectile.NewProjectile(source, position, bobberSpeed, type, 0, 0f, player.whoAmI);
+            }
+            return false;
+        }
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient<ArmotiteBar>(4)
+                .AddIngredient<Plantite>(7)
+                .AddTile<HerbalAnvilTile>()
+                .Register();
+
+        }
+    }
+}
