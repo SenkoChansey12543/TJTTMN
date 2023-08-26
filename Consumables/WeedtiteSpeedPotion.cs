@@ -1,0 +1,41 @@
+﻿using Terraria;
+using Terraria.ModLoader;
+using Terraria.GameContent.Creative;
+using Terraria.ID;
+using TJTTMN.Content.Items.Materials;
+
+namespace TJTTMN.Content.Items.Consumables
+{
+    public class WeedtiteSpeedPotion : ModItem
+    {
+        public override void SetStaticDefaults()
+        {
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 10;
+        }
+        public override void SetDefaults()
+        {
+            Item.buffTime = 14400;
+            Item.width = 10;
+            Item.height = 20;
+            Item.useStyle = ItemUseStyleID.DrinkLiquid;
+            Item.useAnimation = 15;
+            Item.useTime = 15;
+            Item.useTurn = true;
+            Item.UseSound = SoundID.Item3;
+            Item.maxStack = 9999;
+            Item.consumable = true;
+            Item.rare = ItemRarityID.White;
+            Item.value = Item.buyPrice(silver: 5);
+            Item.buffType = ModContent.BuffType<Buffs.WeedtiteSpeed>();
+        }
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient(ItemID.BottledWater)
+                .AddIngredient(ItemID.Blinkroot)
+                .AddIngredient<Weedtite>(3)
+                .AddTile(TileID.Bottles)
+                .Register();
+        }
+    }
+}

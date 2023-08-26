@@ -1,0 +1,3 @@
+displayName = The journey to the mystic nature
+author = Senko San
+version = 0.4

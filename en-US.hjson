@@ -1,0 +1,528 @@
+Mods: {
+	TJTTMN: {
+		Buffs: {
+			ArmotiteCut: {
+				DisplayName: Armotite cut
+				Description: Defense has been reduced
+			}
+
+			HeavyWarriorDefense: {
+				DisplayName: Heavy warrior defense
+				Description: +45% damage reduction but -80% movement speed
+			}
+
+			ManaForce: {
+				DisplayName: Mana force
+				Description: Increases max mana by 50 and mana regen by a little
+			}
+
+			NatureBrew: {
+				DisplayName: Nature brew
+				Description: Grants little life regen and +20 max life
+			}
+
+			NaturesRegeneration: {
+				DisplayName: Nature's regeneration
+				Description: Life regen has been increased
+			}
+
+			WeedtiteSpeed: {
+				DisplayName: Weedtite speed
+				Description: Attack speed increased by 5%
+			}
+
+			PlantiteSpiritBuff: {
+				DisplayName: Plantite spirit
+				Description: The plantite spirit will fight for you
+			}
+
+			FlyingChomperBuff: {
+				DisplayName: Flying chomper
+				Description: Seems like eye of cthulhu and PvZ chomper have a child...
+			}
+
+			ArmotiteChainBuff: {
+				DisplayName: Armotite Chain Buff
+				Description: Mods.TJTTMN.Buffs.ArmotiteChainBuff.Description
+			}
+
+			PaliteVineBuff: {
+				DisplayName: Palite Vine Buff
+				Description: Mods.TJTTMN.Buffs.PaliteVineBuff.Description
+			}
+		}
+
+		Items: {
+			NaturesReblooming: {
+				DisplayName: Nature's reblooming
+				Tooltip:
+					'''
+					Reduced mana cost by 6%
+					Increased magic damage by 8%
+					'''
+			}
+
+			SturdyMedallion: {
+				DisplayName: Sturdy medallion
+				Tooltip:
+					'''
+					Increased damage reduction by 7%
+					Reduces attack speed by 3%
+					'''
+			}
+
+			SturdyShield: {
+				DisplayName: Sturdy shield
+				Tooltip:
+					'''
+					Increased damage reduction by 7%
+					Reduces attack speed by 3%
+					Grants immunity to knockback
+					'''
+			}
+
+			WeedtiteNecklace: {
+				DisplayName: Weedtite necklace
+				Tooltip:
+					'''
+					Increased attack speed by 5%
+					Increased critical strike chance by 1%
+					'''
+			}
+
+			WeedtiteQuiver: {
+				DisplayName: Weedtite quiver
+				Tooltip: +5% ranged attack speed and damage
+			}
+
+			WeedtiteArrow: {
+				DisplayName: Weedtite arrow
+				Tooltip: A special arrow with high velocity and little penetration
+			}
+
+			ArmotiteArmoredPants: {
+				DisplayName: Armotite armored pants
+				Tooltip:
+					'''
+					Increased damage reduction by 3%
+					12% reduced movement speed
+					'''
+			}
+
+			ArmotiteBreastplate: {
+				DisplayName: Armotite breastplate
+				Tooltip:
+					'''
+					Increased damage reduction by 4%
+					Reduced attack speed by 8%
+					'''
+			}
+
+			ArmotiteMask: {
+				DisplayName: Armotite mask
+				Tooltip: Increased damage reduction by 3%
+			}
+
+			MagicHealerDress: {
+				DisplayName: Magic healer dress
+				Tooltip:
+					'''
+					Increased magic attack speed by 5%
+					Increased magic damage by 4%
+					'''
+			}
+
+			MagicHealerHeaddress: {
+				DisplayName: Magic healer headdress
+				Tooltip:
+					'''
+					Increased magic critical strike chance by 3%
+					Reduced mana cost by 4%
+					Increased life regen by a little
+					'''
+			}
+
+			MagicHealerPants: {
+				DisplayName: Magic healer pants
+				Tooltip:
+					'''
+					Increased magic attack speed by 3%
+					Increased movement speed by 4%
+					Increased life regen
+					'''
+			}
+
+			WeedtiteArcherHood: {
+				DisplayName: Weedtite archer hood
+				Tooltip:
+					'''
+					+4% ranged critical strike chance
+					+3% ranged damage
+					'''
+			}
+
+			WeedtiteBreastplate: {
+				DisplayName: Weedtite Breastplate
+				Tooltip:
+					'''
+					+3% ranged critical strike chance 
+					+5% ranged damage
+					'''
+			}
+
+			WeedtiteLeggins: {
+				DisplayName: Weedtite Leggins
+				Tooltip:
+					'''
+					+3% ranged critical strike chance
+					7% increased movement speed
+					'''
+			}
+
+			ArmoplantiteFeather: {
+				DisplayName: Armoplantite feather
+				Tooltip: Summons the armoplantite fenix
+			}
+
+			ManaForcePotion: {
+				DisplayName: Mana force potion
+				Tooltip: Increases max mana by 50 and little mana regen
+			}
+
+			NatureBrew: {
+				DisplayName: Nature brew
+				Tooltip: Grants little life regen and +20 max life
+			}
+
+			WeedtiteSpeedPotion: {
+				DisplayName: Weedtite speed potion
+				Tooltip: Increased attack speed by 5%
+			}
+
+			ArmotiteBar: {
+				DisplayName: Armotite bar
+				Tooltip: Used for creating hard equipment
+			}
+
+			ArmotiteChunk: {
+				DisplayName: Armotite chunk
+				Tooltip:
+					'''
+					A chunk of a strong metal extracted from armoplantite ore
+					It's disgasted, but useful
+					'''
+			}
+
+			Plantite: {
+				DisplayName: Plantite
+				Tooltip: This ancient plant came back to help you making new equipment
+			}
+
+			PlantiteSprout: {
+				DisplayName: Plantite sprout
+				Tooltip:
+					'''
+					A sprout extracted from armoplantite ore
+					If watered, it can grow into an useful material
+					'''
+			}
+
+			VineGel: {
+				DisplayName: Vine gel
+				Tooltip: A slimy and gross liquid, needed to craft herb related items
+			}
+
+			Weedtite: {
+				DisplayName: Weedtite
+				Tooltip:
+					'''
+					One of the strange mystical plants.
+					This one is known as Weedtite, and it's useful for new explorers.
+					'''
+			}
+
+			WeedtiteSprout: {
+				DisplayName: Weedtite sprout
+				Tooltip:
+					'''
+					It can growth into the mystical plant
+					known by the name of Weedtite
+					'''
+			}
+
+			ArmoplantiteOre: {
+				DisplayName: Armoplantite ore
+				Tooltip:
+					'''
+					Can be used with extractinator
+					Usually plants doesn't survive the cold temperatures, but
+					this one managed to survive inside this hard shell
+					'''
+			}
+
+			ArmotiteBlock: {
+				DisplayName: Armotite block
+				Tooltip: ""
+			}
+
+			ArmotiteBrick: {
+				DisplayName: Armotite brick
+				Tooltip: ""
+			}
+
+			ArmotiteBrickWall: {
+				DisplayName: Armotite Brick Wall
+				Tooltip: ""
+			}
+
+			HerbalAnvil: {
+				DisplayName: Herbal anvil
+				Tooltip: Used to craft herb related items
+			}
+
+			PlantiteBlock: {
+				DisplayName: Plantite Block
+				Tooltip: ""
+			}
+
+			PlantiteBrick: {
+				DisplayName: Plantite brick
+				Tooltip: ""
+			}
+
+			PlantiteBrickWall: {
+				DisplayName: Plantite Brick Wall
+				Tooltip: ""
+			}
+
+			WeedtiteBrick: {
+				DisplayName: Weedtite brick
+				Tooltip: ""
+			}
+
+			ArmoplantiteFishingRod: {
+				DisplayName: Armoplantite fishing rod
+				Tooltip:
+					'''
+					You already know that thing about the genius desing.
+					Shoots 2 lines at the same time
+					'''
+			}
+
+			ArmoplantiteHamaxe: {
+				DisplayName: Armoplantite hamaxe
+				Tooltip:
+					'''
+					The most genius desing. Not only you take advantege of armotite
+					and plantite, but you also have an axe and a hammer in the same item.
+					'''
+			}
+
+			ArmoplantitePickaxe: {
+				DisplayName: Armoplantite pickaxe
+				Tooltip: A genius desing. Plantite por fast mining, and armotite for mining strong blocks
+			}
+
+			AcornWand: {
+				DisplayName: Acorn wand
+				Tooltip: It's better than nothing
+			}
+
+			ArmotiteHeavyBlade: {
+				DisplayName: Armotite heavy blade
+				Tooltip:
+					'''
+					It's heavy, but not that heavy
+					Sightly reduces enemy defense
+					'''
+			}
+
+			Crushotgun: {
+				DisplayName: Crushotgun
+				Tooltip: "'Slow but safe'"
+			}
+
+			HeavyWarriorShield: {
+				DisplayName: Heavy warrior shield
+				Tooltip:
+					'''
+					Grants lot of damage reduction while using it
+					at the cost of significantly reduced movement speed
+					'''
+			}
+
+			MushroomCannon: {
+				DisplayName: Mushroom cannon
+				Tooltip:
+					'''
+					They're food, medicine, people, and now weapons: They're awesome!
+					Mushroom consume reduced by 12%
+					'''
+			}
+
+			NaturesRebirthStaff: {
+				DisplayName: Nature's rebirth staff
+				Tooltip: ""
+			}
+
+			TomeOfTheNaturesBeauty: {
+				DisplayName: Tome of the nature's beauty
+				Tooltip: Grants life regen buff for 10 seconds when used
+			}
+
+			WeedtiteBow: {
+				DisplayName: Weedtite bow
+				Tooltip:
+					'''
+					'Okay, but with what kind of herbs was it made?!...'
+					Oh, with weedtite, okay
+					'''
+			}
+
+			WeedtiteMicrogun: {
+				DisplayName: Weedtite microgun
+				Tooltip:
+					'''
+					Ammo consume reduced by 20%
+					A baby gun! So cute!
+					'''
+			}
+
+			PlantiteSpiritRod: {
+				DisplayName: Plantite spirit rod
+				Tooltip: Summons a plantite spirit to fight for you
+			}
+
+			WeedtiteTinyEdge: {
+				DisplayName: Weedtite tiny edge
+				Tooltip: Extremely fast but tiny sword
+			}
+
+			WeedtiteTurretSetter: {
+				DisplayName: Weedtite turret setter
+				Tooltip: Summons an extremely fast shooting weedtite sentry
+			}
+
+			PaliteFlower: {
+				DisplayName: Palite flower
+				Tooltip:
+					'''
+					One of the strange mystical plants.
+					This peculiar flower, for some reason, atracts creatures and make them fight for you.
+					'''
+			}
+
+			PaliteSeeds: {
+				DisplayName: Palite seeds
+				Tooltip:
+					'''
+					Some purple strange seeds
+					These seeds reacts with lava, growing into a beautiful Palite flower
+					'''
+			}
+
+			MysticalGel: {
+				DisplayName: Mystical gel
+				Tooltip: A mystical gel with magical power related to herbs
+			}
+
+			MysticalAnvil: {
+				DisplayName: Mystical anvil
+				Tooltip:
+					'''
+					Wait... It doesn't even have a flat surface!
+					How can you use it? I think it's magic!
+					Used to craft more advanced herb related items
+					'''
+			}
+
+			PaliteBoots: {
+				DisplayName: Palite Boots
+				Tooltip:
+					'''
+					Increases your max number of minions by 1
+					Increases summon damage by 8%
+					'''
+			}
+
+			PaliteHood: {
+				DisplayName: Palite Hood
+				Tooltip:
+					'''
+					Increases your max number of minions by 1
+					Increases summon damage by 7%
+					'''
+			}
+
+			PaliteRobe: {
+				DisplayName: Palite Robe
+				Tooltip:
+					'''
+					Increases whip range by 20%
+					Increases summon damage by 5%
+					Increases you max number of sentries by 1
+					'''
+			}
+
+			ArmotiteChain: {
+				DisplayName: Armotite Chain
+				Tooltip:
+					'''
+					5 summon tag damage
+					Your summons will focus struck enemies
+					Very slow and powerful
+					'''
+			}
+
+			PaliteVine: {
+				DisplayName: Palite Vine
+				Tooltip:
+					'''
+					9 summon tag damage
+					Your summons will focus struck enemies
+					'''
+			}
+		}
+
+		NPCs: {
+			ArmoplantiteElemental.DisplayName: Armoplantite elemental
+			ArmoplantiteFenix.DisplayName: Armoplantite fenix
+			ArmoplantiteWarrior.DisplayName: Armoplantite warrior
+			HerbalSlime.DisplayName: Herbal slime
+			PaliteSlime.DisplayName: Palite Slime
+		}
+
+		Projectiles: {
+			AcornShoot.DisplayName: AcornShoot
+			ArmoplantiteBobber.DisplayName: Armoplantite bobber
+			ArmoplantiteEggProjectile.DisplayName: Armoplantite egg projectile
+			ArmotiteShard.DisplayName: Armotite shard
+			GlowingMushroomProjectile.DisplayName: GlowingMushroomProjectile
+			MushroomProjectile.DisplayName: MushroomProjectile
+			NatureRainProjectile.DisplayName: NatureRainProjectile
+			ViciousMushroomProjectile.DisplayName: ViciousMushroomProjectile
+			VileMushroomProjectile.DisplayName: VileMushroomProjectile
+			WeedtiteArrowProjectile.DisplayName: GrassArrow
+			PlantiteSpiritMinion.DisplayName: Plantite Spirit Minion
+			PlantiteSpiritShoot.DisplayName: Plantite Spirit Shoot
+			WeedtiteTinyEdgeExtraRange.DisplayName: Weedtite Tiny Edge Extra Range
+			WeedtiteTurretSentry.DisplayName: Weedtite Turret Sentry
+			FlyingChomperMinion.DisplayName: Flying Chomper Minion
+			ArmotiteChainProjectile.DisplayName: Armotite Chain Projectile
+			PaliteVineProjectile.DisplayName: Palite Vine Projectile
+		}
+
+		Tiles: {
+			ArmoplantiteTile.MapEntry: Armoplantite
+			ArmotiteBlockTile.MapEntry: Armotite block
+			ArmotiteBrickTile.MapEntry: Armotite brick
+			HerbalAnvilTile.MapEntry: Herbal anvil
+			PlantiteBlockTile.MapEntry: Plantite block
+			PlantiteBrickTile.MapEntry: Plantite brick
+			WeedtiteBrickTile.MapEntry: Weedtite brick
+			WeedtiteTile.MapEntry: Weedtite
+			MysticalAnvilTile.MapEntry: Mystical anvil
+			PaliteTile.MapEntry: Palite
+		}
+	}
+}
