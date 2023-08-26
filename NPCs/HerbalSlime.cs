@@ -1,0 +1,55 @@
+using Terraria;
+using Terraria.GameContent.Bestiary;
+using Terraria.ID;
+using Terraria.ModLoader;
+using Terraria.ModLoader.Utilities;
+using Terraria.GameContent.ItemDropRules;
+using TJTTMN.Content.Items.Materials;
+
+namespace TJTTMN.Content.NPCs
+{
+    public class HerbalSlime : ModNPC
+    {
+        public override void SetStaticDefaults()
+        {
+            Main.npcFrameCount[Type] = Main.npcFrameCount[NPCID.BlueSlime];
+            NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
+            {
+                Velocity = 1f
+            };
+            NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
+        }
+        public override void SetDefaults()
+        {
+            NPC.height = 22;
+            NPC.width = 32;
+            NPC.damage = 10;
+            NPC.defense = 3;
+            NPC.lifeMax = 35;
+            NPC.HitSound = SoundID.NPCHit1;
+            NPC.DeathSound = SoundID.NPCDeath1;
+            NPC.value = 40f;
+            NPC.knockBackResist = 0;
+            NPC.aiStyle = 1;
+            AIType = NPCID.UmbrellaSlime;
+            AnimationType = NPCID.BlueSlime;
+        }
+        public override float SpawnChance(NPCSpawnInfo spawnInfo)
+        {
+            return SpawnCondition.OverworldDayRain.Chance * 0.85f;
+        }
+        public override void ModifyNPCLoot(NPCLoot npcLoot)
+        {
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<VineGel>(), 1, 2, 4));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<WeedtiteSprout>(), 5, 1, 3));
+        }
+        public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
+        {
+            bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
+                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Events.Rain,
+                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.DayTime,
+                new FlavorTextBestiaryInfoElement("It seems that this slime consumed some vine seeds, and when it started raining these seeds growth. Now we have this cute relationship within some vines and a slime."),
+                });
+        }
+    }
+}

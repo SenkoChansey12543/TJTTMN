@@ -1,0 +1,65 @@
+﻿using Terraria;
+using Terraria.GameContent.Bestiary;
+using Terraria.ID;
+using Terraria.ModLoader;
+using Terraria.GameContent.ItemDropRules;
+using TJTTMN.Content.Items.Ores;
+
+namespace TJTTMN.Content.NPCs
+{
+    public class ArmoplantiteElemental : ModNPC
+    {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Armoplantite elemental");
+            Main.npcFrameCount[Type] = Main.npcFrameCount[NPCID.DemonEye];
+            NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
+            {
+                Velocity = 1f
+            };
+            NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
+        }
+        public override void SetDefaults()
+        {
+            NPC.height = 22;
+            NPC.width = 32;
+            NPC.damage = 27;
+            NPC.defense = 9;
+            NPC.lifeMax = 48;
+            NPC.HitSound = SoundID.NPCHit4;
+            NPC.DeathSound = SoundID.NPCDeath6;
+            NPC.value = 120f;
+            NPC.knockBackResist = 0.43f;
+            NPC.aiStyle = 2;
+            AnimationType = NPCID.DemonEye;
+        }
+        public override float SpawnChance(NPCSpawnInfo spawnInfo)
+        {
+            if (NPC.downedBoss2 == true)
+            {
+                if (spawnInfo.Player.ZoneSnow)
+                {
+                    if (spawnInfo.Player.ZoneRockLayerHeight) 
+                    {
+                        return 0.16f;
+                    }
+                }
+            }
+            return 0f;
+        }
+        public override void ModifyNPCLoot(NPCLoot npcLoot)
+        {
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ArmoplantiteOre>(), 1, 4, 7));
+        }
+        public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
+        {
+            ContentSamples.NpcBestiaryRarityStars[ModContent.NPCType<ArmoplantiteElemental>()] = 2;
+            bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] 
+            {
+                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.UndergroundSnow,
+                new FlavorTextBestiaryInfoElement("This Armoplantite ore has came to life and adquired flying powers. This is the genius desing but living version."),
+                
+            });
+        }
+    }
+}

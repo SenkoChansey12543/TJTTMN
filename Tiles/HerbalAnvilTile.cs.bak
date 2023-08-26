@@ -1,0 +1,33 @@
+﻿using TJTTMN.Content.Items.Placeables;
+using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.DataStructures;
+using Terraria.ModLoader;
+using Terraria.ObjectData;
+
+namespace TJTTMN.Content.Tiles
+{
+    internal class HerbalAnvilTile : ModTile
+    {
+        public override void SetStaticDefaults()
+        {
+            Main.tileFrameImportant[Type] = true;
+            Main.tileSolidTop[Type] = true;
+            Main.tileTable[Type] = false;
+            TileObjectData.newTile.CopyFrom(TileObjectData.Style2x1);
+            TileObjectData.addTile(Type);
+            ModTranslation name = CreateMapEntryName();
+            name.SetDefault("Herbal anvil");
+            AddMapEntry(new Color(3, 161, 19), name);
+        }
+        public override bool CreateDust(int i, int j, ref int type)
+        {
+            return false;
+        }
+
+        public override void KillMultiTile(int i, int j, int frameX, int frameY)
+        {
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ModContent.ItemType<HerbalAnvil>());
+        }
+    }
+}

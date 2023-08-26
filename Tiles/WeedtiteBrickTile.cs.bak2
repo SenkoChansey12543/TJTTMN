@@ -1,0 +1,30 @@
+﻿using Terraria;
+using Terraria.Localization;
+using Terraria.ModLoader;
+using Terraria.ID;
+using Microsoft.Xna.Framework;
+using TJTTMN.Content.Items.Placeables;
+
+namespace TJTTMN.Content.Tiles
+{
+    public class WeedtiteBrickTile : ModTile
+    {
+        public override void SetStaticDefaults()
+        {
+            Main.tileSpelunker[Type] = false;
+            Main.tileMergeDirt[Type] = true;
+            Main.tileShine2[Type] = false;
+            Main.tileShine[Type] = 975;
+            Main.tileSolid[Type] = true;
+            Main.tileBlockLight[Type] = true;
+            LocalizedText name = CreateMapEntryName();
+            name.SetDefault("Plantite brick");
+            AddMapEntry(new Color(133, 138, 132), name);
+            DustType = DustID.Grass;
+            ItemDrop = ModContent.ItemType<WeedtiteBrick>();
+            HitSound = SoundID.Tink;
+            MineResist = 1f;
+            MinPick = 1;
+        }
+    }
+}
