@@ -1,0 +1,42 @@
+﻿using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.Audio;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+
+namespace TJTTMN.Content.Projectiles
+{
+    public class WeedtiteArrowProjectile : ModProjectile
+    {
+        public override void SetStaticDefaults()
+        {
+            // DisplayName.SetDefault("GrassArrow");
+        }
+        public override void SetDefaults()
+        {
+            Projectile.DamageType = DamageClass.Ranged;
+            Projectile.width = 6;
+            Projectile.height = 6;
+            Projectile.aiStyle = 1;
+            Projectile.friendly = true;
+            Projectile.hostile = false;
+            Projectile.penetrate = 2;
+            Projectile.timeLeft = 600;
+            Projectile.light = 0.15f;
+            Projectile.ignoreWater = false;
+            Projectile.tileCollide = true;
+        }
+        public override void AI()
+        {
+            int dust = Dust.NewDust(Projectile.Center, 1, 1, 15, 0f, 0f, 0, Color.LightGreen, 1f);
+            Main.dust[dust].noGravity = false;
+            Projectile.aiStyle = 1;            
+        }
+        public override void Kill(int timeLeft)
+        {            
+            Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
+            SoundEngine.PlaySound(SoundID.Dig, Projectile.position);
+        }
+    }
+}

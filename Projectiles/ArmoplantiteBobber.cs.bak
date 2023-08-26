@@ -1,0 +1,29 @@
+﻿using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+
+namespace TJTTMN.Content.Projectiles
+{
+    public class ArmoplantiteBobber : ModProjectile
+    {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Armoplantite bobber");
+        }
+        public override void SetDefaults()
+        {
+            Projectile.CloneDefaults(ProjectileID.BobberWooden);
+            DrawOriginOffsetY = -8;
+        }
+        public static readonly Color[] PossibleLineColors = new Color[] 
+        {
+			new Color(35, 114, 217)
+		};
+        public override void ModifyFishingLine(ref Vector2 lineOriginOffset, ref Color lineColor)
+        {
+            lineOriginOffset = new Vector2(47, -31);
+        }
+    }
+}
