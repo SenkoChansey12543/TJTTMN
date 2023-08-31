@@ -1,0 +1,31 @@
+﻿using Terraria;
+using Terraria.Localization;
+using Terraria.ModLoader;
+using Terraria.ID;
+using TJTTMN.Content.Items.Ores;
+using Microsoft.Xna.Framework;
+using TJTTMN.Content.Items.Materials;
+
+namespace TJTTMN.Content.Tiles
+{
+    public class WeedtiteTile : ModTile
+    {
+        public override void SetStaticDefaults()
+        {
+            TileID.Sets.Ore[Type] = true;
+            Main.tileSpelunker[Type] = true;
+            Main.tileOreFinderPriority[Type] = 10;
+            Main.tileMergeDirt[Type] = true;
+            Main.tileSolid[Type] = true;
+            Main.tileBlockLight[Type] = true;
+            LocalizedText name = CreateMapEntryName();
+            name.SetDefault("Weedtite");
+            AddMapEntry(new Color(57, 201, 0), name);
+            DustType = DustID.Grass;
+            ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ModContent.ItemType<WeedtiteSprout>();
+            HitSound = SoundID.Dig;
+            MineResist = 1f;
+            MinPick = 1;
+        }
+    }
+}
